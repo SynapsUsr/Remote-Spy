@@ -64,8 +64,8 @@ function isSynapse()
     end
 end
 function Parent(GUI)
-    if syn and syn.protect_gui then
-        syn.protect_gui(GUI)
+    if syn and gethui then
+        gethui(GUI)
         GUI.Parent = game:GetService("CoreGui")
     elseif PROTOSMASHER_LOADED then
         GUI.Parent = get_hidden_gui()
