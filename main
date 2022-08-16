@@ -65,12 +65,7 @@ function isSynapse()
 end
 function Parent(GUI)
     if syn and gethui then
-        gethui(GUI)
-        GUI.Parent = game:GetService("CoreGui")
-    elseif PROTOSMASHER_LOADED then
-        GUI.Parent = get_hidden_gui()
-    else
-        GUI.Parent = game:GetService("CoreGui")
+        GUI.Parent = gethui()
     end
 end
 
@@ -129,8 +124,8 @@ game.StarterGui.ResetPlayerGuiOnSpawn = false
 local mouse = game.Players.LocalPlayer:GetMouse()
 
 -- delete the previous instances of turtlespy
-if game.CoreGui:FindFirstChild("TurtleSpyGUI") then
-    game.CoreGui.TurtleSpyGUI:Destroy()
+if gethui():FindFirstChild("TurtleSpyGUI") then
+    gethui().TurtleSpyGUI:Destroy()
 end
 
 --Important tables and GUI offsets
